@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "auto-soundcloud-p"
+version = "1.0.0"
+description = "Made for SoundCloud"
+authors = ["KKoshy"]
+packages = [
+    { include = "scripts", format = ["sdist", "wheel"] },
+]
+
+[tool.poetry.dependencies]
+python = "^3.14"
+pytest-playwright = "^0.8.0"
+opencv-python = "5.0.0.93"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.9.0"
+isort = "^6.1.0"
+autoflake = "^2.3.1"
+allure-pytest = "^2.16.0"
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.black]
+line-length = 100
+
+[tool.autoflake]
+recursive = true
+remove-all-unused-imports = true
+remove-unused-variables = true
+exclude = "__init__.py"
+in-place = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
